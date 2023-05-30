@@ -6,18 +6,26 @@ function Book(title, author, read) {
       this.read = read;
 };
 
+// TODO butt delete /
 function display() {
-    let value = 0;
+    let valueGridColumn = 0;
+    let valueGridRow = 2;
     let container = document.querySelector('.second-section');
-
-    for(let i = 0; i < myLibrary.length; i++) {
-        value += 1; 
+    for(let i = 0; i < myLibrary.length; i++) { 
+        if(valueGridColumn <= 3) {
+            valueGridColumn += 1;
+        } else if(valueGridColumn > 3) {
+            valueGridColumn = 0;
+            valueGridColumn += 1;
+            container.style.gridTemplateRows = '90px 310px 310px';
+            valueGridRow = 3;
+        }
         let book = myLibrary[i];
 
         let createDiv = document.createElement('div');
         createDiv.classList.add('book-div');
-        // every time new objects grid +1 if > 3 row +1
-        createDiv.style.gridColumn = value;
+        createDiv.style.gridColumn = valueGridColumn;
+        createDiv.style.gridRow = valueGridRow;
         container.appendChild(createDiv);
 
         let createT = document.createElement('p');
@@ -27,7 +35,7 @@ function display() {
 
         let createA = document.createElement('p');
         createA.classList.add('author-book');
-        createA.textContent = `Title: ${book.author}`;
+        createA.textContent = `Author: ${book.author}`;
         createDiv.appendChild(createA);
 
         let createDivAl = document.createElement('div');
@@ -36,12 +44,27 @@ function display() {
 
         let createButtR = document.createElement('button');
         createButtR.classList.add('button-read');
-        createButtR.textContent = `Title: ${book.read}`;
+        createButtR.textContent = `${book.read}`;
+        createButtR.addEventListener('click', function() {
+            if(book.read === 'Read') {
+                book.read = 'Not Read';
+                createButtR.textContent = `${book.read}`;
+            } else {
+                book.read = 'Read';
+                createButtR.textContent = `${book.read}`;
+            }
+        });
         createDivAl.appendChild(createButtR);
 
         let createButtD = document.createElement('button');
         createButtD.classList.add('button-delete');
         createButtD.textContent = 'Delete';
+        createButtD.addEventListener('click', function() {
+            createDiv.remove();
+            myLibrary.pop(this.book);
+            console.log(myLibrary);
+            // need to remove the object from the list
+        });
         createDivAl.appendChild(createButtD);
     } 
 }
@@ -64,33 +87,6 @@ form.addEventListener('submit', function(event) {
     addBookToLibrary();
 });
 
-
-let setTitle = document.querySelector('.title-book');
-setTitle.textContent = `Title: ${newBook.title}`;
-let setAuthor = document.querySelector('.author-book');
-setAuthor.textContent = `Author: ${newBook.author}`;
-let setStatus = document.querySelector('.button-read');
-setStatus.textContent = `${newBook.read}`;
-
-
-let readButton = document.querySelector('.button-read');
-function setReadButton() {
-
-}
-readButton.addEventListener('click', setReadButton);
-
-let divFirst = document.querySelector('.book-div');
-let deleteButton = document.querySelector('.button-delete');
-function setDeleteButton() {
-    setTitle.remove();
-    setAuthor.remove();
-    setStatus.remove();
-    readButton.remove();
-    deleteButton.remove();
-    divFirst.remove();
-}
-deleteButton.addEventListener('click', setDeleteButton);
-
 /*  Book objects need to be stored in the array
     Take user input and store the new book objects
     into the array
@@ -102,5 +98,5 @@ deleteButton.addEventListener('click', setDeleteButton);
     when button is pressed display the book
     store the book in an array to keep value of it
 
-    button create an nex object zith the value
+    button create an nex object with the value
 */

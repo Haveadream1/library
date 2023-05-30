@@ -14,7 +14,7 @@
 <body>
     <h1>My Book Library</h1>
 
-    <form action="post">
+    <form id="form" action="post">
         <fieldset>
             <label for="title">Title</label>
             <input type="text" id="title">
@@ -26,14 +26,18 @@
         <fieldset>
             <label for="status">Status</label>
             <select name="status" id="status">
-                <option value="read">Read</option>
-                <option value="not-read" selected>Not read</option>
+                <option value="Read">Read</option>
+                <option value="Not read" selected>Not read</option>
             </select>
         </fieldset>
-        <button class="button-add" type="submit">Add Book</button>
+        <section class="first-section">
+            <button class="button-add">Add Book</button>
+        </section>
     </form>
 
-    <section>
+    <section class="second-section"></section>
+    <!--
+    <section class="second-section">
         <p class="title-section">My books</p>
         <div class="book-div">
             <p class="title-book">Title:</p>
@@ -44,5 +48,6 @@
             </div>
         </div>
     </section>
+    -->
 </body>
 </html>

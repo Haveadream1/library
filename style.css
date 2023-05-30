@@ -1,15 +1,16 @@
 :root {
-    --grey: var(#D9D9D9);
+    --grey: #D9D9D9;
+    --blue: #6FBAFF;
+    --red: #FF5454;
 }
 body {
     font-family: quicksand;
     font-size: 22px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px 400px 400px;
+    grid-template-rows: 150px 250px;
 }
 h1 {
-    background-color: aqua;
     font-size: 35px;
     font-weight: 400;
     grid-row: 1;
@@ -17,10 +18,10 @@ h1 {
     padding: 30px 0;
 }
 form {
-    background-color: aquamarine;
     grid-row: 2;
     display: grid;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 125px 125px;
+    align-items: center;
 }
 fieldset {
     border: none;
@@ -28,42 +29,91 @@ fieldset {
     display: flex;
     flex-direction: column;
     margin-right: 100px;
+    margin: 0 70px;
 }
 label {
     margin-bottom: 15px;
 }
 input {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: #D9D9D9 solid 3px;
-    max-width: 300px;;
+    border: none;
+    border-bottom: var(--grey) solid 3px;
+    max-width: 400px;
     padding: 5px;
+    font-size: 15px;
 }
 select {
     padding: 5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid 3px;
+    border: none;
+    border-bottom: var(--grey) solid 3px;
     background-color: white;
     max-width: 90px;
+    font-size: 15px;
+}
+.first-section {
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .button-add {
     color: white;
-    background-color: #6FBAFF;
+    background-color: var(--blue);
     border: none;
     font-size: 20px;
     width: 160px;
     height: 50px;
     padding: 8px;
-    grid-row: 2;
-    grid-column: 2;
 }
-section {
-    background-color: bisque;
-    grid-row: 3;
+.second-section {
+    grid-row: 4;
+    display: grid;
+    grid-template-rows: 90px 310px ;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 0 20px;
+}
+.title-section {
+    grid-row: 1;
+    grid-column: 1;
 }
 .book-div {
-    border: solid #D9D9D9;
+    grid-row: 2;
+    grid-column: 1;
+    background-color: white;
+    border: solid var(--grey);
+    width: 300px;
+    height: 300px;
+    padding: 0 20px;
+}
+.align-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button-read {
+    border: solid var(--grey);
+    background-color: white;
+    width: 120px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+    font-size: 20px;
+}
+.button-delete {
+    background-color: var(--red);
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+}
+button:active {
+    opacity: 70%;
+}
+select,
+input,
+button {
+    font-family: quicksand;
 }
