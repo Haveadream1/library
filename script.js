@@ -6,7 +6,7 @@ function Book(title, author, read) {
       this.read = read;
 };
 
-// TODO butt delete /
+// TODO butt delete 
 function display() {
     let valueGridColumn = 0;
     let valueGridRow = 2;
@@ -55,15 +55,16 @@ function display() {
             }
         });
         createDivAl.appendChild(createButtR);
-
+        // take off the right object but need to click several times on the same butt
         let createButtD = document.createElement('button');
         createButtD.classList.add('button-delete');
         createButtD.textContent = 'Delete';
         createButtD.addEventListener('click', function() {
             createDiv.remove();
-            myLibrary.pop(this.book);
+            let index = myLibrary.indexOf(book);
+            myLibrary.splice(index,1);
             console.log(myLibrary);
-            // need to remove the object from the list
+            console.log(index)
         });
         createDivAl.appendChild(createButtD);
     } 
@@ -97,6 +98,5 @@ form.addEventListener('submit', function(event) {
     Take value from input, store it in an object or array
     when button is pressed display the book
     store the book in an array to keep value of it
-
-    button create an nex object with the value
+    button create an new object with the value
 */
