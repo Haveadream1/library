@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script rc="script.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Online Book Library</title>
 </head>
 <body>
@@ -17,11 +17,11 @@
     <form id="form" action="post">
         <fieldset>
             <label for="title">Title</label>
-            <input type="text" id="title">
+            <input type="text" id="title" required>
         </fieldset>
         <fieldset>
             <label for="author">Author</label>
-            <input type="text" id="author">
+            <input type="text" id="author" required>
         </fieldset>
         <fieldset>
             <label for="status">Status</label>
@@ -36,18 +36,5 @@
     </form>
 
     <section class="second-section"></section>
-    <!--
-    <section class="second-section">
-        <p class="title-section">My books</p>
-        <div class="book-div">
-            <p class="title-book">Title:</p>
-            <p class="author-book">Author:</p>
-            <div class="align-button">
-                <button class="button-read">Read</button>
-                <button class="button-delete">Delete</button>
-            </div>
-        </div>
-    </section>
-    -->
 </body>
 </html>

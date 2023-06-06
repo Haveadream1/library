@@ -1,12 +1,13 @@
 let myLibrary = [];
 
-function Book(title, author, read) {
-      this.title = title;
-      this.author = author;
-      this.read = read;
+class Book {
+    constructor(title, author, read) {
+        this.title = title;
+        this.author = author;
+        this.read = read;
+    }
 };
-
-// TODO butt delete 
+ 
 function display() {
     let valueGridColumn = 0;
     let valueGridRow = 2;
@@ -56,11 +57,14 @@ function display() {
         });
         createDivAl.appendChild(createButtR);
         // take off the right object but need to click several times on the same butt
+        // i need the same number of click as the index dafuck
         let createButtD = document.createElement('button');
         createButtD.classList.add('button-delete');
         createButtD.textContent = 'Delete';
-        createButtD.addEventListener('click', function() {
-            createDiv.remove();
+        createButtD.addEventListener('click', function(e) {
+            //createButtD.parentElement.parentElement.remove();
+            // e.test.remove();
+            e.createButtD.parentElement.remove();
             let index = myLibrary.indexOf(book);
             myLibrary.splice(index,1);
             console.log(myLibrary);
