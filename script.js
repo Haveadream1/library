@@ -117,28 +117,33 @@ const showSuccess = (input) => {
 }
 
 const checkTitle = () => {
+  let valid = false;
   const titleValue = titleEL.value.trim();
   if (!isRequired(titleValue)) {
     showError(titleEL, 'Title cannot be blank');
   } else {
-    showSuccess(titleEL)
+    showSuccess(titleEL);
+    valid = true;
   }
+  return valid;
 }
 
 const checkTAuthor = () => {
+  let valid = false;
   const authorValue = authorEl.value.trim();
   if (!isRequired(authorValue)) {
     showError(authorEl, 'Author cannot be blank');
   } else {
-    showSuccess(authorEl)
+    showSuccess(authorEl);
+    valid = true;
   }
+  return valid;
 }
 
 // Used to prevent to sent data to backend
 let form = document.querySelector("#form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  addBookToLibrary();
 
   let isAuthorValid = checkTAuthor(), 
   isTitleValid = checkTitle();
@@ -147,7 +152,10 @@ form.addEventListener("submit", (event) => {
   
   // to submit the data to the server if valid but don't work, as i don't saw that
   if (isFormValid) {
-    //
+    addBookToLibrary();
+    console.log('Valid form');
+  } else {
+    console.log('Error in form');
   }
 });
 
