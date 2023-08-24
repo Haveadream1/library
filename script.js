@@ -162,7 +162,6 @@ form.addEventListener('input', (e) => {
   }
 })
 
-
 /*  Book objects need to be stored in the array
     Take user input and store the new book objects
     into the array
