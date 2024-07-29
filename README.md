@@ -17,11 +17,11 @@ The main goal of this website is to practice the class manipulation as well as t
 
 ## Todo
 1. Html
-   * Add semantic for container
    * Refactor form section
    * Refactor book section
    * Add footer for credit
    * Refactor status spelling
+   * Refactor name read / not read
 2. Css
    * Add backup for font
    * Refactor main grid
