@@ -10,7 +10,7 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-rows: 150px 250px 1fr;
+  grid-template-rows: 150px 300px 1fr;
 }
 
 header {
@@ -24,43 +24,42 @@ h1 {
 }
 
 form {
-  grid-row: 2;
   display: grid;
-  grid-template-rows: 125px 125px;
+  grid-template-rows: 200px 100px;
   align-items: center;
 }
 fieldset {
-  border: none;
   grid-row: 1;
+  border: none;
   display: flex;
   flex-direction: column;
-  margin-right: 100px;
-  margin: 0 70px;
+  margin: 15px;
+  padding: 10px;
 }
-/*22px*/
 label {
+  font-size: 20px;
   margin-bottom: 15px;
 }
+
 input {
-  border: none;
-  border-bottom: var(--grey) solid 3px;
-  max-width: 400px;
-  padding: 5px;
-  font-size: 15px;
+  max-width: 300px;
 }
 select {
+  max-width: 120px;
+  background-color: white;
+}
+input,
+select {
+  font-size: 15px;
   padding: 5px;
   border: none;
   border-bottom: var(--grey) solid 3px;
-  background-color: white;
-  max-width: 90px;
-  font-size: 15px;
 }
-.first-section {
+
+.button-section {
   grid-row: 2;
   grid-column: 2;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 .button-add {
@@ -73,7 +72,7 @@ select {
   padding: 8px;
 }
 
-.second-section {
+.book-section {
   grid-row: 4;
   display: grid;
   grid-template-rows: 310px;
