@@ -19,7 +19,6 @@ The main goal of this website is to practice the class manipulation as well as t
 2. Css
    * Refactor book section margin
    * Add mobile version
-   * Refactor focus input (outline)
    * Align form (center)
 3. JS
    * Refactor name choice
