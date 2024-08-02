@@ -16,16 +16,14 @@ The main goal of this website is to practice the class manipulation as well as t
 [The Odin Project](https://www.theodinproject.com/)
 
 ## Todo
-1. Html
-   * Refactor form section
-   * Refactor book section
-   * Add footer for credit
 2. Css
    * Refactor book section margin
    * Add mobile version
    * Refactor error display
    * Refactor statut button
    * Refactor focus input (outline)
+   * Align title with the input below (center)
+   * Style footer
 3. JS
    * Refactor name choice
    * Refactor function
