@@ -19,11 +19,8 @@ The main goal of this website is to practice the class manipulation as well as t
 2. Css
    * Refactor book section margin
    * Add mobile version
-   * Refactor error display
-   * Refactor statut button
    * Refactor focus input (outline)
-   * Align title with the input below (center)
-   * Style footer
+   * Align form (center)
 3. JS
    * Refactor name choice
    * Refactor function
