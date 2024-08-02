@@ -10,7 +10,7 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-rows: 150px 300px 1fr;
+  grid-template-rows: 150px 300px 1fr 50px;
 }
 
 header {
@@ -27,6 +27,7 @@ form {
   display: grid;
   grid-template-rows: 200px 100px;
   align-items: center;
+  justify-items: center;
 }
 fieldset {
   grid-row: 1;
@@ -51,6 +52,7 @@ select {
 input,
 select {
   font-size: 15px;
+  font-family: quicksand, sans-serif;
   padding: 5px;
   border: none;
   border-bottom: var(--grey) solid 3px;
@@ -63,22 +65,16 @@ select {
   justify-content: center;
 }
 .button-add {
-  color: white;
-  background-color: var(--blue);
-  border: none;
+  font-family: quicksand, sans-serif;
   font-size: 20px;
   width: 160px;
   height: 50px;
-  padding: 8px;
+  padding: 10px;
+  color: white;
+  background-color: var(--blue);
+  border: none;
 }
 
-.book-section {
-  grid-row: 4;
-  display: grid;
-  grid-template-rows: 310px;
-  gap: 15px;
-  padding: 0 20px;  
-}
 .book-div {
   grid-row: 1;
   background-color: white;
@@ -110,13 +106,20 @@ select {
   font-size: 20px;
   color: white;
 }
+
+footer {
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+a:-webkit-any-link {
+  color: black;
+}
+
 button:active {
   opacity: 70%;
-}
-select,
-input,
-button {
-  font-family: quicksand;
 }
 
 .error {
