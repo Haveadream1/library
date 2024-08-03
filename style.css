@@ -122,7 +122,7 @@ small {
 }
 
 footer {
-  grid-row: 4;
+  grid-row: 3;
   display: flex;
   justify-content: center;
   align-items: center;
