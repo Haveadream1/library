@@ -1,7 +1,7 @@
-let container = document.querySelector(".second-section");
-let titleEL = document.getElementById("title");
-let authorEl = document.getElementById("author");
-let readEl = document.getElementById("status");
+let container = document.querySelector(".book-section");
+let titleEL = document.getElementById("book-title");
+let authorEl = document.getElementById("author-name");
+let readEl = document.getElementById("book-status");
 let x = -1;
 let myLibrary = [];
 
