@@ -20,8 +20,8 @@ The main goal of this website is to practice the class manipulation as well as t
    * Add mobile version
    * Align form (center)
 3. JS
-   * Refactor name choice
-   * Refactor function
+   * Refactor createBook function
    * After 4 books, pass next below
+   * Modify book object after change
  
 (Used class and object, 'this' still a bit tricky but should come with more exo)
