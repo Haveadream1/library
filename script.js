@@ -1,27 +1,34 @@
-let container = document.querySelector(".book-section");
-let titleEL = document.getElementById("book-title");
-let authorEl = document.getElementById("author-name");
-let readEl = document.getElementById("book-status");
-let x = -1;
+const form = document.querySelector('#form');
+
+const bookSection = document.querySelector('.book-section');
+
+const bookTitle = document.querySelector('#book-title');
+const authorName = document.querySelector('#author-name');
+const bookStatus = document.querySelector('#book-status');
+
 let myLibrary = [];
 
 class Book {
-  constructor(title, author, read) {
+  constructor(title, author, status) {
     this.title = title;
     this.author = author;
-    this.read = read;
+    this.status = status;
   }
 }
 
-function display() {
+
+let x = -1;
+
+
+const createBook = () => {
   x++;
 
   let createDiv = document.createElement("div");
   createDiv.classList.add("book-div");
-  container.appendChild(createDiv);
+  bookSection.appendChild(createDiv);
 
   if (myLibrary.length > 4 && myLibrary.length <= 8) {
-    container.style.gridTemplateRows = '310px 310px';
+    bookSection.style.gridTemplateRows = '310px 310px';
     createDiv.style.gridRow = '2';
   } else if (myLibrary.length > 8) {
     container.style.gridTemplateRows = '310px 310px 310px';
@@ -79,13 +86,16 @@ function display() {
   }
 }
 
-function addBookToLibrary() {
-  const title =  titleEL.value;
-  const author = authorEl.value;
-  const read = readEl.value;
-  let newBook = new Book(title, author, read);
-  myLibrary.push(newBook);
+const addBookToLibrary = () => {
+  const title =  bookTitle.value;
+  const author = authorName.value;
+  const status = bookStatus.value;
+
+  let book = new Book(title, author, status);
+
+  myLibrary.push(book);
   console.log(myLibrary);
+
   display();
 }
 
@@ -118,67 +128,62 @@ const showSuccess = (input) => {
 
 const checkTitle = () => {
   let valid = false;
-  const titleValue = titleEL.value.trim();
+  const titleValue = bookTitle.value.trim();
+
   if (!isRequired(titleValue)) {
-    showError(titleEL, 'Title cannot be blank');
+    showError(bookTitle, 'Title cannot be blank');
   } else {
-    showSuccess(titleEL);
+    showSuccess(bookTitle);
     valid = true;
   }
   return valid;
 }
 
-const checkTAuthor = () => {
+const checkAuthor = () => {
   let valid = false;
-  const authorValue = authorEl.value.trim();
+  const authorValue = authorName.value.trim();
+
   if (!isRequired(authorValue)) {
-    showError(authorEl, 'Author cannot be blank');
+    showError(authorName, 'Author cannot be blank');
   } else {
-    showSuccess(authorEl);
+    showSuccess(authorName);
     valid = true;
   }
   return valid;
 }
 
 // Used to prevent to sent data to backend
-let form = document.querySelector("#form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let isAuthorValid = checkTAuthor(), 
+  let isAuthorValid = checkAuthor(), 
   isTitleValid = checkTitle();
 
   let isFormValid = isAuthorValid && isTitleValid;
   
-  // to submit the data to the server if valid but don't work, as i don't saw that
   if (isFormValid) {
     addBookToLibrary();
     console.log('Valid form');
   } else {
-    console.log('Error in form');
+    console.log('Invalid form');
   }
 });
 
 form.addEventListener('input', (e) => {
   switch (e.target.id) {
-    case 'title' :
+    case 'book-title':
       checkTitle();
       break;
-    case 'author' :
-      checkTAuthor();
+    case 'author-name':
+      checkAuthor();
       break;
   }
 })
 
-/*  Book objects need to be stored in the array
-    Take user input and store the new book objects
-    into the array
-    function that loops through the array and displays 
-    each book
-    
-
-    Take value from input, store it in an object or array
-    when button is pressed display the book
-    store the book in an array to keep value of it
-    button create an new object with the value
+/*
+  Take user input
+  Create a new object
+  Store book object in the array
+  Create a DOM book and display it
+  Target the book object in array and change value
 */
