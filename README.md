@@ -19,7 +19,6 @@ The main goal of this website is to practice the class manipulation as well as t
 2. Css
    * Add mobile version
    * Align form (center)
-   * Fix main gap in bottom
 3. JS
    * Refactor name choice
    * Refactor function
