@@ -10,7 +10,13 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-rows: 150px 300px 1fr 50px;
+  grid-template-rows: 150px 1fr 50px; /*300px*/
+}
+
+button {
+  font-size: 20px;
+  padding: 15px;
+  font-family: quicksand, sans-serif;
 }
 
 header {
@@ -23,6 +29,10 @@ h1 {
   font-weight: 400;
 }
 
+main {
+  display: grid;
+  grid-template-rows: 300px 1fr;
+}
 form {
   display: grid;
   grid-template-rows: 200px 100px;
@@ -69,23 +79,29 @@ small {
   justify-content: center;
 }
 .button-add {
-  font-family: quicksand, sans-serif;
-  font-size: 20px;
   width: 160px;
   height: 50px;
-  padding: 10px;
+  padding: 0;
   color: white;
   background-color: var(--blue);
   border: none;
 }
 
+.book-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .book-div {
-  grid-row: 1;
-  background-color: white;
-  border: solid var(--grey);
   width: 300px;
   height: 300px;
-  padding: 0 20px;
+  padding: 0 10px;
+  background-color: white;
+  border: solid var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .align-button {
   display: flex;
@@ -94,21 +110,15 @@ small {
   align-items: center;
 }
 .button-read {
+  margin: 15px;
   border: solid var(--grey);
   background-color: white;
-  width: 120px;
-  height: 50px;
-  margin-top: 20px;
-  margin-bottom: 22px;
-  font-size: 20px;
 }
 .button-delete {
+  width: 180px;
+  color: white;
   background-color: var(--red);
   border: none;
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  color: white;
 }
 
 footer {
