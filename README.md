@@ -17,11 +17,12 @@ The main goal of this website is to practice the class manipulation as well as t
 
 ## Todo
 2. Css
-   * Refactor book section margin
    * Add mobile version
    * Align form (center)
+   * Fix main gap in bottom
 3. JS
    * Refactor name choice
    * Refactor function
+   * After 4 books, pass next below
  
 (Used class and object, 'this' still a bit tricky but should come with more exo)
