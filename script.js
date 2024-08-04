@@ -86,19 +86,25 @@ const createBook = () => {
   }
 }
 */
-
+/*
 const addBookToLibrary = () => {
   const title =  bookTitle.value;
   const author = authorName.value;
   const status = bookStatus.value;
 
-  let book = new Book(title, author, status);
+  let newBook = new Book(title, author, status);
 
-  myLibrary.push(book);
+  myLibrary.push(newBook);
   console.log(myLibrary);
 }
-
+*/
 const createBook = () => {
+
+  let newBook = new Book(bookTitle.value, authorName.value, bookStatus.value);
+
+  myLibrary.push(newBook);
+  console.log(myLibrary);
+
   const book = document.createElement('section');
   book.classList.add('book');
   bookSection.appendChild(book);
@@ -122,12 +128,28 @@ const createBook = () => {
   statusButton.textContent = bookStatus.value;
   bookButtonSection.appendChild(statusButton);
 
+  statusButton.addEventListener('click', () => {
+    if (newBook.status === 'Reading') {
+      newBook.status = 'Plan to read';
+    } else {
+      newBook.status = 'Reading';
+    }
+    statusButton.textContent = newBook.status;
+    console.log(newBook);
+  })
+
   const deleteButton = document.createElement('button');
   deleteButton.classList.add('delete-button');
   deleteButton.textContent = 'Delete';
   bookButtonSection.appendChild(deleteButton);
 
-  addBookToLibrary();
+  deleteButton.addEventListener('click', () => {
+    book.remove();
+    newBook.remove()
+    console.log(myLibrary)
+  })
+
+
 }
 
 // form client-side validation
