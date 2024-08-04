@@ -22,6 +22,5 @@ The main goal of this website is to practice the class manipulation as well as t
    * Add gap between books
 3. JS
    * After 4 books, pass next below
-   * Modify book object after change
  
 (Used class and object, 'this' still a bit tricky but should come with more exo)
