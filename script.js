@@ -16,92 +16,9 @@ class Book {
   }
 }
 
-
-let x = -1;
-
-/*
-const createBook = () => {
-  x++;
-
-  let createDiv = document.createElement("div");
-  createDiv.classList.add("book-div");
-  bookSection.appendChild(createDiv);
-
-  if (myLibrary.length > 4 && myLibrary.length <= 8) {
-    bookSection.style.gridTemplateRows = '310px 310px';
-    createDiv.style.gridRow = '2';
-  } else if (myLibrary.length > 8) {
-    container.style.gridTemplateRows = '310px 310px 310px';
-    createDiv.style.gridRow = '3';
-  }
-
-  let createT = document.createElement("p");
-  createT.classList.add("title-book");
-  createDiv.appendChild(createT);
-
-  let createA = document.createElement("p");
-  createA.classList.add("author-book");
-  createDiv.appendChild(createA);
-
-  let createDivAl = document.createElement("div");
-  createDivAl.classList.add("align-button");
-  createDiv.appendChild(createDivAl);
-
-  let createButtR = document.createElement("button");
-  createButtR.classList.add("button-read");
-  createDivAl.appendChild(createButtR);
-
-  let createButtD = document.createElement("button");
-  createButtD.classList.add("button-delete");
-  createButtD.textContent = "Delete";
-  createButtD.dataset.id = x;
-  createDivAl.appendChild(createButtD);
-
-  createButtD.addEventListener("click", () => {
-    createDiv.remove();
-    // take the right object with the index set before with data set
-    index = createButtD.dataset.id;
-    console.log(index);
-    myLibrary.splice(index,1);
-    console.log(myLibrary)
-    x--;
-  });
-
-  for (let i = 0; i < myLibrary.length; i++) {
-    let book = myLibrary[i];
-
-    createT.textContent = `Title: ${book.title}`;
-    createA.textContent = `Author: ${book.author}`;
-    createButtR.textContent = `${book.read}`;
-
-    createButtR.addEventListener("click", () => {
-      if (book.read === "Read") {
-        book.read = "Not Read";
-        createButtR.textContent = `${book.read}`;
-      } else {
-        book.read = "Read";
-        createButtR.textContent = `${book.read}`;
-      } 
-    });
-  }
-}
-*/
-/*
-const addBookToLibrary = () => {
-  const title =  bookTitle.value;
-  const author = authorName.value;
-  const status = bookStatus.value;
-
-  let newBook = new Book(title, author, status);
-
-  myLibrary.push(newBook);
-  console.log(myLibrary);
-}
-*/
 const createBook = () => {
 
   let newBook = new Book(bookTitle.value, authorName.value, bookStatus.value);
-
   myLibrary.push(newBook);
   console.log(myLibrary);
 
@@ -144,12 +61,12 @@ const createBook = () => {
   bookButtonSection.appendChild(deleteButton);
 
   deleteButton.addEventListener('click', () => {
-    book.remove();
-    newBook.remove()
-    console.log(myLibrary)
+    book.remove(); // DOM remove
+
+    const index = myLibrary.indexOf(newBook);
+    myLibrary.splice(index,1); // Array remove
+    console.log(myLibrary);
   })
-
-
 }
 
 // form client-side validation
