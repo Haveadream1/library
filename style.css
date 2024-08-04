@@ -93,7 +93,7 @@ small {
   justify-content: center;
 }
 
-.book-div {
+.book {
   width: 300px;
   height: 300px;
   padding: 0 10px;
@@ -103,18 +103,18 @@ small {
   flex-direction: column;
   justify-content: center;
 }
-.align-button {
+.book-button-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.button-read {
+.status-button {
   margin: 15px;
   border: solid var(--grey);
   background-color: white;
 }
-.button-delete {
+.delete-button {
   width: 180px;
   color: white;
   background-color: var(--red);
