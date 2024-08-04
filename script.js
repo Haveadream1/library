@@ -19,7 +19,7 @@ class Book {
 
 let x = -1;
 
-
+/*
 const createBook = () => {
   x++;
 
@@ -85,6 +85,7 @@ const createBook = () => {
     });
   }
 }
+*/
 
 const addBookToLibrary = () => {
   const title =  bookTitle.value;
@@ -95,8 +96,38 @@ const addBookToLibrary = () => {
 
   myLibrary.push(book);
   console.log(myLibrary);
+}
 
-  display();
+const createBook = () => {
+  const book = document.createElement('section');
+  book.classList.add('book');
+  bookSection.appendChild(book);
+
+  const title = document.createElement('p');
+  title.classList.add('title');
+  title.textContent = `Title: ${bookTitle.value}`;
+  book.appendChild(title);
+
+  const author = document.createElement('p');
+  author.classList.add('author');
+  author.textContent = `Author: ${authorName.value}`;
+  book.appendChild(author);
+
+  const bookButtonSection = document.createElement('section');
+  bookButtonSection.classList.add('book-button-section');
+  book.appendChild(bookButtonSection);
+
+  const statusButton = document.createElement('button');
+  statusButton.classList.add('status-button');
+  statusButton.textContent = bookStatus.value;
+  bookButtonSection.appendChild(statusButton);
+
+  const deleteButton = document.createElement('button');
+  deleteButton.classList.add('delete-button');
+  deleteButton.textContent = 'Delete';
+  bookButtonSection.appendChild(deleteButton);
+
+  addBookToLibrary();
 }
 
 // form client-side validation
@@ -162,7 +193,7 @@ form.addEventListener("submit", (event) => {
   let isFormValid = isAuthorValid && isTitleValid;
   
   if (isFormValid) {
-    addBookToLibrary();
+    createBook();
     console.log('Valid form');
   } else {
     console.log('Invalid form');
