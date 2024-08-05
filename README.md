@@ -19,7 +19,5 @@ The main goal of this website is to practice the class manipulation as well as t
 2. Css
    * Add mobile version
    * Align form (center)
-3. JS
-   * After 4 books, pass next below
  
 (Used class and object, 'this' still a bit tricky but should come with more exo)
