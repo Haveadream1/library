@@ -17,7 +17,6 @@ class Book {
 }
 
 const createBook = () => {
-
   let newBook = new Book(bookTitle.value, authorName.value, bookStatus.value);
   myLibrary.push(newBook);
   console.log(myLibrary);
