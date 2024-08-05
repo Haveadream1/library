@@ -36,6 +36,7 @@ main {
 form {
   display: grid;
   grid-template-rows: 200px 100px;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
 }
