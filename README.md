@@ -18,6 +18,7 @@ The main goal of this website is to practice the class manipulation as well as t
 ## Todo
 2. Css
    * Add mobile version
-   * Align form (center)
+      * Form resize
+      * Book resize
  
 (Used class and object, 'this' still a bit tricky but should come with more exo)
