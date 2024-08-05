@@ -19,7 +19,6 @@ The main goal of this website is to practice the class manipulation as well as t
 2. Css
    * Add mobile version
    * Align form (center)
-   * Add gap between books
 3. JS
    * After 4 books, pass next below
  
