@@ -2,9 +2,10 @@
 The website 'My online library' allows us to fill out a form in order to add a book to our library with the following parameters:
 * the title of the book
 * the name of the author
-* the status: plan to read or already read
+* the status: plan to read or reading
 
 We can consult, modify the status of the book we have added in our library, as well as completely remove it.
+
 ## Goal
 The main goal of this website is to practice the class manipulation as well as the responsiveness of the different containers.
 
@@ -12,7 +13,6 @@ The main goal of this website is to practice the class manipulation as well as t
 [My online Library](https://haveadream1.github.io/library/)
 
 ## Credit
-[Icons]()  
 [The Odin Project](https://www.theodinproject.com/)
 
 ## Todo
@@ -20,5 +20,4 @@ The main goal of this website is to practice the class manipulation as well as t
    * Add mobile version
       * Form resize
       * Book resize
- 
-(Used class and object, 'this' still a bit tricky but should come with more exo)
+(git branch todo, git checkout todo, checkout, git merge todo)
