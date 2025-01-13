@@ -23,5 +23,6 @@ The main goal of this website is to practice the class manipulation as well as t
       * Form resize
       * Book resize
    * Fix the border focus on imput
+   * Try to visualy separate the two sections
 
 (git branch todo, git checkout todo, checkout, git merge todo)
