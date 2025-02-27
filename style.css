@@ -19,6 +19,7 @@ button {
   font-family: quicksand, sans-serif;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: center;
@@ -29,6 +30,7 @@ h1 {
   font-weight: 400;
 }
 
+/* Form */
 main {
   display: grid;
   grid-template-rows: 300px 1fr;
@@ -88,6 +90,7 @@ small {
   border: none;
 }
 
+/* Library */
 .book-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -124,6 +127,7 @@ small {
   border: none;
 }
 
+/* Footer */
 footer {
   grid-row: 3;
   display: flex;
