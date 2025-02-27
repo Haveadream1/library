@@ -16,7 +16,8 @@ class Book {
   }
 }
 
-const createBook = () => {
+// Create a book object and push it to the library array
+function createBook() {
   let newBook = new Book(bookTitle.value, authorName.value, bookStatus.value);
   myLibrary.push(newBook);
   console.log(myLibrary);
@@ -60,10 +61,10 @@ const createBook = () => {
   bookButtonSection.appendChild(deleteButton);
 
   deleteButton.addEventListener('click', () => {
-    book.remove(); // DOM remove
+    book.remove(); // Remove element from the DOM
 
     const index = myLibrary.indexOf(newBook);
-    myLibrary.splice(index,1); // Array remove
+    myLibrary.splice(index,1); // Remove element from the array
     console.log(myLibrary);
   })
 }
@@ -121,6 +122,16 @@ const checkAuthor = () => {
   return valid;
 }
 
+function setDefaultInputs() {
+  const title = document.querySelector('#book-title');
+  const author = document.querySelector('#author-name');
+
+  title.value = '';
+  title.classList.remove('success'); // Only remove success as error don't pass the form validity
+  author.value = '';
+  author.classList.remove('success');
+}
+
 // Used to prevent to sent data to backend
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -136,6 +147,7 @@ form.addEventListener("submit", (event) => {
   } else {
     console.log('Invalid form');
   }
+  setDefaultInputs()
 });
 
 form.addEventListener('input', (e) => {
