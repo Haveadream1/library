@@ -16,8 +16,6 @@ The main goal of this website is to practice the class manipulation as well as t
 [The Odin Project](https://www.theodinproject.com/)
 
 ## Todo
-1. JS
-   * Clear entries after adding a new book
 3. Css
    * Add mobile version
       * Form resize
